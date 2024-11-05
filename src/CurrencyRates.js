@@ -4,11 +4,11 @@ import './App.css';
 
 const CurrencyRates = () => {
   const [rates, setRates] = useState([]);
-  const API_KEY = '5a7cf25eeb284305b8320e02b9415874';
+  const API_KEY = process.env.REACT_APP_API_KEY;
   const BASE_CURRENCY = 'USD';
+  const currencies = ['CAD', 'EUR', 'IDR', 'JPY', 'CHF', 'GBP'];
   
   useEffect(() => {
-      const currencies = ['CAD', 'EUR', 'IDR', 'JPY', 'CHF', 'GBP'];
       const fetchRates = async () => {
           try {
         const response = await axios.get(`https://api.currencyfreaks.com/v2.0/rates/latest?apikey=${API_KEY}&base=${BASE_CURRENCY}`);
@@ -56,7 +56,7 @@ const CurrencyRates = () => {
         </tbody>
       </table>
       <p>Rates are based from 1 USD</p>
-      <p>This application uses API from https://currencyfreaks.com.</p>
+      <p>This application uses API from <a href='https://currencyfreaks.com' target='_blank' rel='noopener noreferrer'>https://currencyfreaks.com</a>.</p>
     </div>
   );
 };

@@ -3,9 +3,9 @@ import CurrencyRates from './CurrencyRates';
 
 function App() {
   return (
-    <div className="App">
-      < CurrencyRates />
-    </div>
+      <div className="App">
+        < CurrencyRates />
+      </div>
   );
 }
 
